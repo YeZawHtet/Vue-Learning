@@ -14,10 +14,21 @@
   </head>
   <body>
     <div id="body">
+      <!-- Expression -->
       {{ `${message} is commented by ${commentBy}` }}
+      <!-- Data Binding -->
       <p :style="{color:color}">{{ isLike? "Liked" : "" }}</p>
       <a :href="url" target="_blank" :class="{none:isActive}">Google</a>
       <img :src="imageSrc" alt="Image" />
+      <!-- Conditional Rendering -->
+      <p v-if="isActive">Active</p>
+      <p v-else>Not Active</p>
+      <!-- Directives in Vue -->
+      <p v-show="isActive">Condition True and Showing this!</p>
+      <p v-text="text"></p>
+      <p v-html="textHtml"></p>
+      <!-- Two way data binding -->
+      <input type="text" v-model="inputText"> <p>{{ inputText }}</p>
     </div>
   </body>
   <script>
@@ -32,6 +43,10 @@
         color: "red",
         imageSrc:
           "https://i0.wp.com/picjumbo.com/wp-content/uploads/spring-flowers-lettering-in-floral-garden-free-photo.jpeg?w=600&quality=80",
+        text:"This is Text from Vue Object Data", 
+        textHtml:"<h1>Text from Vue Object Data</h1>",
+        // two way data binding 
+        inputText:"Hello This is Two Way Data Binding",
       },
     });
   </script>
