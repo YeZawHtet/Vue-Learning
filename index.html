@@ -33,6 +33,10 @@
       <ul>
         <li v-for="(fruit, index) in fruitsData" :key="index">{{ fruit }}</li>
       </ul>
+      <!-- Event in Vue -->
+      <button v-on:click="doAlert()">Click Me!</button>
+      <button v-on:click="upCounter()">Increment counter</button>
+      {{ counter }}
     </div>
   </body>
   <script>
@@ -53,7 +57,20 @@
         inputText:"Hello This is Two Way Data Binding",
         // array data for looping test
         fruitsData:['apple','orange', 'mango', 'banana'],
+        // couter event test
+        counter:0,
       },
+      // methods for event
+      methods:{
+        doAlert(){
+        alert("Hey! Ye Zaw Htet!");
+        },
+        // increase counter
+      upCounter(){
+        this.counter++;
+      }
+      },
+      
     });
   </script>
 </html>
