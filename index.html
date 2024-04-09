@@ -29,6 +29,10 @@
       <p v-html="textHtml"></p>
       <!-- Two way data binding -->
       <input type="text" v-model="inputText"> <p>{{ inputText }}</p>
+      <!-- Looping in Vue -->
+      <ul>
+        <li v-for="(fruit, index) in fruitsData" :key="index">{{ fruit }}</li>
+      </ul>
     </div>
   </body>
   <script>
@@ -47,6 +51,8 @@
         textHtml:"<h1>Text from Vue Object Data</h1>",
         // two way data binding 
         inputText:"Hello This is Two Way Data Binding",
+        // array data for looping test
+        fruitsData:['apple','orange', 'mango', 'banana'],
       },
     });
   </script>
