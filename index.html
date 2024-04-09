@@ -5,19 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
     <title>Vue Training</title>
+    <style>
+      .none {
+        text-decoration: none;
+        color: brown;
+      }
+    </style>
   </head>
   <body>
-    <div id="body">{{ `${message} is commented by ${commentBy}` }}</div>
-    <p 
+    <div id="body">
+      {{ `${message} is commented by ${commentBy}` }}
+      <p :style="{color:color}">{{ isLike? "Liked" : "" }}</p>
+      <a :href="url" target="_blank" :class="{none:isActive}">Google</a>
+      <img :src="imageSrc" alt="Image" />
+    </div>
   </body>
   <script>
     new Vue({
       el: "#body",
       data: {
         message: "Hello Vue!",
-        commentBy:"Trojan",
-        isLike:true,
-
+        commentBy: "Trojan",
+        isLike: true,
+        url: "http://google.com",
+        isActive: true,
+        color: "red",
+        imageSrc:
+          "https://i0.wp.com/picjumbo.com/wp-content/uploads/spring-flowers-lettering-in-floral-garden-free-photo.jpeg?w=600&quality=80",
       },
     });
   </script>
