@@ -2,4 +2,12 @@ step-one => vue instance create
 step-two => expression in vue
 step-three => data binding
 image source => picjumbo.com
-step-four => 
+step-four => Directives, Looping
+step-five => Event
+step-six => Computed (for computing data in vue, that is usefule for large compute are required)
+
+Shortthand Properties
+----------------------------------------------------------------
+v-bind:   => :
+v-on:click   => @click
+

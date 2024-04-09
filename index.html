@@ -35,8 +35,9 @@
       </ul>
       <!-- Event in Vue -->
       <button v-on:click="doAlert()">Click Me!</button>
-      <button v-on:click="upCounter()">Increment counter</button>
+      <button @click="upCounter()">Increment counter</button>
       {{ counter }}
+      <p v-show="isEven">This is Even Number</p>
     </div>
   </body>
   <script>
@@ -70,6 +71,12 @@
         this.counter++;
       }
       },
+      // computed property
+      computed:{
+        isEven(){
+          return this.counter%2==0;
+        }
+      }
       
     });
   </script>
